@@ -1,4 +1,5 @@
 import { Slot } from "expo-router";
+import { StatusBar } from "react-native";
 import "../../global.css";
 
 const levels = ["log", "info", "warn", "error", "debug"] as const;
@@ -14,5 +15,11 @@ levels.forEach((level) => {
 });
 
 export default function RootLayout() {
-	return <Slot />;
+	return (
+		<>
+			<StatusBar barStyle="dark-content" backgroundColor={"#f1f5f9"} />
+
+			<Slot />
+		</>
+	);
 }
