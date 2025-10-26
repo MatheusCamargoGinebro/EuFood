@@ -1,6 +1,8 @@
 import { ScrollView, View } from "react-native";
 import { Banner } from "../components/banner";
 import { Header } from "../components/header";
+import { RestaurantVerticalList } from "../components/list";
+import { Restaurants } from "../components/restaurants";
 import { Search } from "../components/search";
 import { Section } from "../components/section";
 import { TrendingFoods } from "../components/trending";
@@ -29,10 +31,32 @@ export default function Index() {
 					name={"Comidas em alta"}
 					size={"text-2xl"}
 					label={"Veja mais"}
-					action={() => console.log("Clicou no veja mais")}
+					action={() => console.log("Clicou no veja mais - trending foods")}
 				/>
 
 				<TrendingFoods />
+			</View>
+
+			<View>
+				<Section
+					name={"Famosos no EuFood"}
+					size={"text-xl"}
+					label={"Veja mais"}
+					action={() => console.log("Clicou no veja mais - Famosos")}
+				/>
+
+				<Restaurants />
+			</View>
+
+			<View>
+				<Section
+					name={"Restaurantes"}
+					size={"text-xl"}
+					label={"Veja mais"}
+					action={() => console.log("Clicou no veja mais - restaurants")}
+				/>
+
+				<RestaurantVerticalList />
 			</View>
 		</ScrollView>
 	);
