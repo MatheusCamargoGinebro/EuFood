@@ -1,4 +1,6 @@
 import { Slot } from "expo-router";
+import { setBackgroundColorAsync } from "expo-system-ui"; // controla a Navigation Bar
+import { useEffect } from "react";
 import { StatusBar } from "react-native";
 import "../../global.css";
 
@@ -15,10 +17,15 @@ levels.forEach((level) => {
 });
 
 export default function RootLayout() {
+	useEffect(() => {
+		// Muda a cor da Navigation Bar (inferior) para preto
+		setBackgroundColorAsync("#000000");
+	}, []);
+
 	return (
 		<>
-			<StatusBar barStyle="dark-content" backgroundColor={"#f1f5f9"} />
-
+			{/* Muda a StatusBar (superior) para preto com ícones claros */}
+			<StatusBar barStyle="light-content" backgroundColor="#000000" />
 			<Slot />
 		</>
 	);
