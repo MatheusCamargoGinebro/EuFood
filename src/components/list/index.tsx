@@ -23,7 +23,7 @@ export function RestaurantVerticalList() {
 	}, []);
 
 	return (
-		<View className="px-4 flex-1 w-full h-full mb-11 gap-4">
+		<View className="flex gap-4 px-4 mb-5">
 			{restaurants.map((item) => (
 				<RestaurantItem item={item} key={item.id} />
 			))}
